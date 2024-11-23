@@ -15,6 +15,16 @@ let age = 19
 let isLoogedIn = false
 
 
+console.log(typeof "abhishek");
+console.log(typeof null);
+console.log(typeof undefined);
+console.log(typeof age);
+
+
+
+
+
+
 
 
 
