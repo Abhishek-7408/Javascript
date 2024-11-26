@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body  style="background-color: #212121; color: #fff;">
+    
+</body>
+
+<script>
+const div = document.createElement('div')
+console.log(div);
+div.className = "main"
+div.id = Math.random(Math.random() * 10 + 1)
+div.setAttribute("title", "generated title")
+
+div.style.backgroundColor = "green"
+div.style.padding = "12px"
+// div.innerText = "Chai aur code"
+
+const addtext = document.createTextNode("Hello React Dom")
+div.appendChild(addtext)
+
+document.body.appendChild(div)
+
+const div2 = document.createElement('div')
+console.log(div2);
+div2.className = "main2"
+div2.id = Math.random(Math.random() * 10 + 1)
+div2.setAttribute("title", "generated title")
+
+div2.style.backgroundColor = "red"
+div2.style.padding = "12px"
+// div.innerText = "Chai aur code"
+
+
+
+const addtext2 = document.createTextNode("Hello React Dom")
+div2.appendChild(addtext2)
+
+document.body.appendChild(div2)
+
+</script>
+
+</html>
