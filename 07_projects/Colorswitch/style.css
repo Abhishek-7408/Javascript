@@ -1,6 +1,53 @@
 html {
     margin: 0;
   }
+
+
+  /* Center the navigation bar */
+/* Center the navigation bar */
+nav {
+  display: flex;             /* Use flexbox for alignment */
+  justify-content: center;   /* Center items horizontally */
+  align-items: center;       /* Center items vertically if needed */
+  gap: 30px;                 /* Add more spacing between the links */
+  background-color: #f5f5f5; /* Light background color */
+  padding: 15px 30px;        /* Add generous padding */
+  border-radius: 10px;       /* Smooth rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Style the navigation links */
+nav a {
+  text-decoration: none;         /* Remove underlines */
+  color: #007bff;                /* Bright link color */
+  font-size: 18px;               /* Slightly larger font size */
+  font-weight: bold;             /* Bold font for emphasis */
+  font-family: 'Arial', sans-serif; /* Clean sans-serif font */
+  padding: 8px 12px;             /* Add padding for clickable area */
+  border-radius: 6px;            /* Rounded corners for hover effect */
+  transition: all 0.3s ease;     /* Smooth transitions for hover effects */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Hover effect */
+nav a:hover {
+  background-color: #e0e0e0;     /* Light gray background on hover */
+  color: #0056b3;                /* Darker blue text on hover */
+  transform: scale(1.1);         /* Slight zoom effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Add shadow on hover */
+}
+
+/* Active/current page link style */
+nav a[aria-current="page"] {
+  color: #fff;                   /* White text for the active page */
+  background-color: #007bff;     /* Blue background for the active page */
+  padding: 10px 15px;            /* Extra padding for emphasis */
+  border-radius: 8px;            /* Slightly larger rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow for focus */
+}
+
+
+  
   
   span {
     display: block;
@@ -28,7 +75,11 @@ html {
   #blue {
     background: blue;
   }
-  #yellow {
-    background: yellow;
+  #black {
+    background: black;
+  }
+
+  #red {
+    background: red;
   }
   
