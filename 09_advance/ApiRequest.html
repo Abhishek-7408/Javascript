@@ -1,0 +1,166 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+
+</body>
+
+<script>
+
+    const reqUrl = 'https://api.github.com/users/abhishek-7408'
+   const xhr = new XMLHttpRequest();
+   xhr.open('GET', reqUrl )
+   xhr.onreadystatechange = function(){
+   console.log(xhr.readyState);
+   if(xhr.readyState === 4)
+   {
+    const data = JSON.parse(this.responseText);
+    console.log(typeof data);
+    
+    console.log(data.followers)
+    
+   }    
+    
+   }
+   xhr.send();
+   
+</script>
+
+</html>
+
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github User Info</title>
+    <style>
+        body {
+        
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        img {
+            border-radius: 50%;
+            margin-top: 20px;
+        }
+        .info {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chai Aur Javascript</h1>
+    <div class="container">
+        <button id="fetchButton">Fetch User Info</button>
+        <div class="info" id="userInfo"></div>
+    </div>
+
+    <script>
+        const reqUrl = 'https://api.github.com/users/abhishek-7408';
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', reqUrl);
+
+        document.getElementById('fetchButton').addEventListener('click', function() {
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    const data = JSON.parse(this.responseText);
+                    const userInfo = document.getElementById('userInfo');
+                    userInfo.innerHTML = `
+                        <img src="${data.avatar_url}" alt="User Image" width="100" height="100">
+                        <p>Followers: ${data.followers}</p>
+                    `;
+                }
+            };
+            xhr.send();
+        });
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Profile Info</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        img {
+            border-radius: 50%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>GitHub Profile Info</h1>
+    <div id="profile-info">
+        <p>Loading...</p>
+    </div>
+
+    <script>
+        const reqUrl = 'https://api.github.com/users/abhishek-7408';
+        const xhr = new XMLHttpRequest();
+
+        xhr.open('GET', reqUrl);
+        xhr.onreadystatechange = function () {
+            console.log(xhr.readyState); // For debugging purposes
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                const data = JSON.parse(this.responseText);
+
+                // Access avatar_url and followers count
+                const avatarUrl = data.avatar_url;
+                const followersCount = data.followers;
+
+                // Display data on the browser
+                const profileInfo = document.getElementById('profile-info');
+                profileInfo.innerHTML = `
+                    <img src="${avatarUrl}" alt="Avatar" width="150" height="150">
+                    <p><strong>Followers:</strong> ${followersCount}</p>
+                `;
+            } else if (xhr.readyState === 4) {
+                // Handle errors
+                const profileInfo = document.getElementById('profile-info');
+                profileInfo.innerHTML = `<p>Failed to load profile information.</p>`;
+            }
+        };
+
+        xhr.send();
+    </script>
+</body>
+</html>
