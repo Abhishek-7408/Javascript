@@ -74,3 +74,43 @@ console.log(username);
     console.log("The promise is either resolved or rejected!");
     
 })
+
+const promiseFive = new Promise((resolve,reject)=>{
+
+    setTimeout(function(){
+
+        let error = true
+        if(!error){
+            resolve({username: "javascript", pass:"1Adhjf664"})
+        }
+        else{
+            reject('JS: Something went wrong')
+        }
+
+    },1000)
+
+
+})
+
+async function name(params) {
+
+    try {
+
+        const response = await promiseFive
+    console.log(response);
+        
+    } catch (error) {
+
+        console.log(error);
+        
+        
+    }
+    
+    
+}
+
+name()
+
+
+
+
